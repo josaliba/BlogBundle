@@ -1,0 +1,25 @@
+{
+    "name": "josaliba/blog-bundle",
+    "type": "symfony-bundle",
+    "description": "A simple blog for use with Symfony2",
+    "keywords": ["blog", "bundle", "symfony2"],
+    "homepage": "https://github.com/josaliba/BlogBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joseph Saliba",
+            "email": "joseph@coddict.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "require-dev": {
+        "symfony/framework-bundle": ">=2.3"
+    },
+    "autoload": {
+        "psr-0": { "Josaliba\\BlogBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Josaliba/BlogBundle"
+}
