@@ -1,0 +1,14 @@
+Josaliba\BlogBundle\Entity\Category:
+    type: entity
+    table: josaliba_blog__categories
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+
+    lifecycleCallbacks: {  }

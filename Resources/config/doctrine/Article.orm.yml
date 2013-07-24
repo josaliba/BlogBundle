@@ -1,0 +1,25 @@
+Josaliba\BlogBundle\Entity\Article:
+    type: entity
+    table: josaliba_blog__articles
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        title:
+            type: string
+            length: 255
+        article:
+            type: text
+        categories:
+            targetEntity: Category
+            inversedBy: articles
+            joinTable:
+                name: josaliba_blog__articles_categories
+        tags:
+            targetEntity: Tag
+            inversedBy: articles
+            joinTable:
+                name: josaliba_blog__articles_tags
+    lifecycleCallbacks: {  }
