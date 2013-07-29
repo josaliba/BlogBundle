@@ -1,6 +1,22 @@
 Josaliba\BlogBundle\Entity\Article:
     type: entity
     table: josaliba_blog__articles
+    gedmo:
+        soft_deleteable:
+            field_name: deleteDate
+    manyToMany:
+        categories:
+            targetEntity: Category
+            inversedBy: articles
+            joinTable:
+                name: josaliba_blog__articles_categories
+                joinColumns:
+                    article_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    category_id:
+                        referencedColumnName: id
+
     fields:
         id:
             type: integer
@@ -12,14 +28,31 @@ Josaliba\BlogBundle\Entity\Article:
             length: 255
         article:
             type: text
-        categories:
-            targetEntity: Category
-            inversedBy: articles
-            joinTable:
-                name: josaliba_blog__articles_categories
         tags:
             targetEntity: Tag
             inversedBy: articles
             joinTable:
                 name: josaliba_blog__articles_tags
+        createDate:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        lastUpdated:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleteDate:
+            type: datetime
+            nullable: true
+        submitted:
+            type: boolean
+            nullable: true
+        published:
+            type: boolean
+            nullable: true
+        publishDate:
+            type: datetime
+            nullable: true
     lifecycleCallbacks: {  }

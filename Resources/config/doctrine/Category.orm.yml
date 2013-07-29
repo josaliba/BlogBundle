@@ -1,6 +1,10 @@
 Josaliba\BlogBundle\Entity\Category:
     type: entity
     table: josaliba_blog__categories
+    manyToMany:
+        articles:
+            targetEntity: Article
+            mappedBy: categories
     fields:
         id:
             type: integer
@@ -10,5 +14,4 @@ Josaliba\BlogBundle\Entity\Category:
         name:
             type: string
             length: 255
-
     lifecycleCallbacks: {  }

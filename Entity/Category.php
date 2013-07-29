@@ -62,4 +62,24 @@ class Category
     {
         return $this->name;
     }
+
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $articles
+     * @return Category
+     */
+    public function setArticles($articles)
+    {
+        $this->articles = $articles;
+        return $this;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getArticles()
+    {
+        return $this->articles;
+    }
+
+
 }

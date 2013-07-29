@@ -44,17 +44,27 @@ class Article
     /**
      * @var \DateTime
      */
+    private $lastUpdated;
+
+    /**
+     * @var \DateTime
+     */
     private $deleteDate;
 
     /**
      * @var boolean
      */
-    private $submitted;
+    private $submitted = false;
 
     /**
      * @var boolean
      */
-    private $published;
+    private $published = false;
+
+    /**
+     * @var /DateTime
+     */
+    private $publishDate;
 
     public function __construct(){
         $this->categories = new ArrayCollection();
@@ -133,15 +143,7 @@ class Article
         return $this->deleteDate;
     }
 
-    /**
-     * @param int $id
-     * @return Article
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
+
 
     /**
      * @return int
@@ -222,6 +224,46 @@ class Article
     {
         return $this->title;
     }
+
+    /**
+     * @param \DateTime $lastUpdated
+     * @return Article
+     */
+    public function setLastUpdated($lastUpdated)
+    {
+        $this->lastUpdated = $lastUpdated;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastUpdated()
+    {
+        return $this->lastUpdated;
+    }
+
+    /**
+     * @param mixed $publishDate
+     * @return Article
+     */
+    public function setPublishDate($publishDate)
+    {
+        $this->publishDate = $publishDate;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPublishDate()
+    {
+        return $this->publishDate;
+    }
+
+
+
+
 
 
 
